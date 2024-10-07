@@ -1,0 +1,155 @@
+.product {
+    width: 68%;
+    display: grid;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.product_card {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product_image {
+    width: 100%;
+    height: 75%;
+    object-fit: contain; 
+}
+
+.product_card p{
+    margin: 0;
+}
+
+.product_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem;
+}
+
+.product_title {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+    width: 10rem;
+    text-align: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wishlist_button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.wishlist_button:hover {
+    color: #333;
+}
+
+.product_details {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.product_details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.product_details a:hover {
+    text-decoration: underline;
+}
+
+.skeleton_product_card {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    gap: 0.5rem;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton_image {
+    width: 100%;
+    height: 75%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}
+
+.skeleton_text {
+    width: 80%;
+    height: 1rem;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.skeleton_text.short {
+    width: 60%;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #e0e0e0;
+    }
+    50% {
+        background-color: #f5f5f5;
+    }
+    100% {
+        background-color: #e0e0e0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .product {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .product {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        padding:0;
+        width: 100%;
+
+
+    }
+
+    .product_card {
+        height: 300px;
+        padding: 0; 
+    }
+    
+    .product_info{
+        padding: 0.2rem;
+        margin: 1rem;
+
+    }
+
+    .product_image {
+        height: 120px;
+    }
+
+    .product_title {
+        font-size: 0.9rem;
+        width: 6rem;
+    }
+
+    .product_details {
+        font-size: 0.8rem;
+    }
+}
