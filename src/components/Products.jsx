@@ -7,7 +7,6 @@ const Product = ({ isMobile, hideFilter }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        setTimeout(()=>{
             const fetchProducts = async () => {
                 try {
                     const response = await fetch("https://fakestoreapi.com/products");
@@ -24,15 +23,11 @@ const Product = ({ isMobile, hideFilter }) => {
             };
     
             fetchProducts();
-        },2000)
     }, []);
 
     if (loading) {
         return (
-            <div className="product" style={{
-                gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : hideFilter ? 'repeat(4, 1fr)' : 'repeat(3, 1fr)',
-                width: hideFilter ? "90%" : ""
-            }}>
+            <div className="product" >
             {Array.from({ length: isMobile ? 4 : hideFilter ? 8 : 6 }).map((_, index) => (
                 <div key={index} className="skeleton_product_card">
                     <div className="skeleton_image"></div>

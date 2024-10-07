@@ -30,12 +30,12 @@ const Shope = () => {
                <div className="shop" >
                     <div className="shop_bar">
                          <div className="bar_section">
-                              <div className="">
+                              <div className="" >
                                    {isMobile ? "" : <h4>34223 ITEMS</h4>}
                               </div>
                               <div className="bar_subsection">
                                    {!isMobile ? <i className={`pi ${hideFilter ? "pi-angle-left" : "pi-angle-right"}`} style={{ margin: 0 }}></i> : ""}
-                                   <h4 onClick={() => setHideFilter(!hideFilter)}>
+                                   <h4 style={{color:'gray'}} onClick={() => setHideFilter(!hideFilter)}>
                                         {isMobile ? "FILTER" : hideFilter ? "SHOW FILTER" : "HIDE FILTER"}
                                    </h4>
                               </div>
